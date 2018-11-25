@@ -1,0 +1,49 @@
+================== ===========-
+OOP Workflow
+================== ===========-
+
+1. Write or draw about the problem.
+2. Extract key concepts from #1 and research them.
+3. Create a class hierarchy and object map for the concepts.
+4. Code the classes and a test to run them.
+5. Repeat and refine.
+
+Example of application:
+  1. Contemplation
+I want to create a program that organizes information about pets from individuals.
+Information such as name of the pet, species of the pet, domain of pet, and the
+age of the pet.
+
+  2. Extract key concepts
+- classes
+- has-a class
+  * name
+  * species
+  * domain
+  * age
+  * owner
+  * ID
+- is-a Pet class
+  * is-a pet
+-reproducing the information.
+* raw_input
+* in put of ID to extract pet information
+
+  3. Create some Object Mapping
+  - Pet class
+
+  4. Code
+
+  class Pet(object):
+    def __init__(self, owner, petname, species, age, pid)
+    self.owner = owner
+    self.petname = petname
+    self.species = species
+    self.age = age
+    self.pid = pid
+
+    def __str__(self):
+    return "Pet Name: %s\nSpecies: %s\nAge: %s\nOwnner: %s\nPet ID: %s\n" %
+    (self.petname, self.species, self.age, self.owner, self.pid)
+
+  5. Rinse and repeat

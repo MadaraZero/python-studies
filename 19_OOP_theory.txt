@@ -1,0 +1,160 @@
+================== ===========-
+GENERAL INTRODUCTION TO OBJECT ORIENTED Programming
+================== ===========-
+
+OOP is Object Oriented Programming meaning that Data takes precedence over
+action or short for 'Data Before Action'.
+
+A class is a data type definition in the same sense that def is a
+function definition. Meaning that by using class we create a new data type.
+However, this data is a compound data type meaning that it is concocted by
+multiple data types.
+The class has:
+* class(data type definition)
+    * types of data : field(data member) i.e. abstract data structure
+    * types of data : method(function member) i.e. functions of the class
+    methods/functions are used on all instances.
+
+* object/instance(piece of data)
+
+Objects or Instances which means the same thing are actual pieces of data
+composed by its specific class. For instance, a class with the structure:
+name, species, age could produce object/instance 'Jack', 'Cat', '6 years'
+
+A class called Cats produces separate fields for each instance:
+Cat_1       Cat_2       Cat_3
+-lives: 7   -lives: 4   -lives: 9
+
+However, methods can be applied universally:
+Cat_1       Cat_2       Cat_3
+-lives: 7   -lives: 4   -lives: 9
+-meow()     -meow()     -meow()
+
+meow(Cat_2) object Cat_2 of the Cats class will execute the meow() function/
+method.
+
+================== ===========-
+ENCAPSULATION
+================== ===========-
+
+Encapsulation is the idea that functions can only be used by an instance/object
+that belongs to a specific class. Meaning that the field method of
+lives can only be used by objects of the class Cats.
+
+Public members:
+public members of class are visible everywhere. It is okay to access the
+public members outside their class.
+
+Private members:
+Private members are only visible to methods of own type.
+Are only meant to be accessed by methods of the same class.
+
+Following the principle of encapsulation strictly means that all fields
+should be kept private, or else you get spaghetti code.
+
+================== ===========-
+INHERITANCE
+================== ===========-
+
+Inheritance, a type may include all members from another type. For example,
+Cats has the fields:
+-Name
+-Age
+-Lives
+
+Dog inherits name and age:
+-Name
+-Age
+
+You can set up what inherits what i.e. automatic inheritance:
+
+Animal : A, B, C
+Mammal : D, E | A, B, C
+Cat    : F, G | D, E | A, B, C
+
+Inheritance is basically set-theory.
+
+                       |===========================|
+                       |                           |
+                       |          Animal           |
+                       |          q, w, t          |
+                       |                           |
+                       |===========================|
+                                     ^
+                                     |
+                                     |
+                             +-----------------+
+                             |                 |
+                             |                 |
+                        |==========|       |==========|
+                        |    Cat   |       |   Dog    |
+                        |==========|       |==========|
+A = {a, b, c}
+M = {A, d, e, g}
+C = {A, B, h, i, j}
+
+Terminology...:
+-----------------------------------------------------
+|  from above:                                      |
+|  >>> [Mammal and Cat are Children of Animal       |
+|  >>> [Mammal and Cat are Sub-types of Animal      |
+|  >>> [Mammal and Cat are Descendants of Animal    |
+|                                                   |
+|  from below:                                      |
+|  >>> [Animal is a Super-type of Mammal and Cat    |
+|  >>> [Mammal is a super-type of Cat               |
+|                                                   |
+|  >>> [Animal is an Ancestor of Mammal and Cat     |
+|  >>> [Mammal is an Ancestor of Cat                |
+|                                                   |
+|                                                   |
+|  >>> [Animal is a Parent of Mammal and Cat        |
+|  >>> [Mammal is a Parent of Cat                   |
+-----------------------------------------------------
+
+================== ===========-
+SOME TERMINOLOGY
+================== ===========-
+
+
+class : Tell Python to make a new kind of thing.
+
+object : Two meanings: the most basic kind of thing, and any instance of some thing.
+
+instance : What you get when you tell Python to create a class.
+
+def : How you define a function inside a class.
+
+self : Inside the functions in a class, self is a variable for the instance/object
+being accessed.
+
+inheritance : The concept that one class can inherit traits from another
+class, much like you and your parents.
+
+composition : The concept that a class can be composed of other classes as parts,
+much like how car has wheels.
+
+attribute : A property classes have that are from composition and are usually
+variables.
+
+is-a : A phrase to say that something inherits from another, as in a 'salmon' is-a
+'fish'.
+
+has-a : A phrase to say that something is composed of other things or has a trait,
+as in 'a salmon has-a mouth.'
+
+class X(Y) "Make a class named X that is-a Y."
+
+class X(object):
+    def __init__(self, J)
+        """class X has-a __init__ that takes self and J parameters."""
+
+class X(object):
+    def M(self,J) "class X has-a function named M that takes self" \
+                              "and J parameters."
+
+foo  = X() "Set foo to an instance of class X"
+
+foo.M(J) "From foo get the M function, and call it with parameters self, J"
+
+foo.K = Q "From foo get the K attribute, and set it to Q"
